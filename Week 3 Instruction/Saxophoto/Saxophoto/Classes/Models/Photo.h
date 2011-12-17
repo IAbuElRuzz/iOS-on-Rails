@@ -13,6 +13,9 @@
 @property (nonatomic, copy) NSString *imageURLString;
 @property (readonly) NSURL *imageURL;
 
+@property (nonatomic, copy) NSString *thumbnailImageURLString;
+@property (readonly) NSURL *thumbnailImageURL;
+
 @property (nonatomic, copy) NSString *timestamp;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;

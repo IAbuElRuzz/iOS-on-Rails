@@ -11,6 +11,8 @@
 @implementation Photo
 @synthesize imageURLString = _imageURLString;
 @dynamic imageURL;
+@synthesize thumbnailImageURLString = _thumbnailImageURLString;
+@dynamic thumbnailImageURL;
 @synthesize timestamp = _timestamp;
 
 - (id)initWithAttributes:(NSDictionary *)attributes {
@@ -20,6 +22,7 @@
     }
     
     self.imageURLString = [attributes valueForKeyPath:@"image_urls.original"];
+    self.thumbnailImageURLString = [attributes valueForKeyPath:@"image_urls.thumbnail"];
     
     self.timestamp = [attributes valueForKey:@"timestamp"];
     
@@ -28,6 +31,10 @@
 
 - (NSURL *)imageURL {
     return [NSURL URLWithString:self.imageURLString];
+}
+
+- (NSURL *)thumbnailImageURL {
+    return [NSURL URLWithString:self.thumbnailImageURLString];
 }
 
 @end

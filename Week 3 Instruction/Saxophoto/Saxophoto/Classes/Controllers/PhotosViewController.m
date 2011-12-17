@@ -46,6 +46,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
     }];
+    
+    self.tableView.rowHeight = 100.0f;
 }
 
 #pragma mark - Actions
@@ -75,7 +77,7 @@
     
     Photo *photo = [self.photos objectAtIndex:indexPath.row];
     
-    [cell.imageView setImageWithURL:photo.imageURL placeholderImage:[UIImage imageNamed:@"placeholder-photo.png"]];
+    [cell.imageView setImageWithURL:photo.thumbnailImageURL placeholderImage:[UIImage imageNamed:@"placeholder-photo.png"]];
     cell.textLabel.text = photo.timestamp;
     
     return cell;
