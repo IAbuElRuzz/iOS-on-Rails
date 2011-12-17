@@ -25,6 +25,8 @@
 		F8F3A6A3149D0317000CD0A4 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A698149D0317000CD0A4 /* AFXMLRequestOperation.m */; };
 		F8F3A6A4149D0317000CD0A4 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A69A149D0317000CD0A4 /* UIImageView+AFNetworking.m */; };
 		F8F3A6A7149D0374000CD0A4 /* SaxophotoAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A6A6149D0374000CD0A4 /* SaxophotoAPIClient.m */; };
+		F8F3A6AA149D0CAD000CD0A4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A6A9149D0CAD000CD0A4 /* Photo.m */; };
+		F8F3A6AD149D0E6F000CD0A4 /* placeholder-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F3A6AC149D0E6F000CD0A4 /* placeholder-photo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		F8F3A69A149D0317000CD0A4 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		F8F3A6A5149D0374000CD0A4 /* SaxophotoAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxophotoAPIClient.h; sourceTree = "<group>"; };
 		F8F3A6A6149D0374000CD0A4 /* SaxophotoAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxophotoAPIClient.m; sourceTree = "<group>"; };
+		F8F3A6A8149D0CAD000CD0A4 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Classes/Models/Photo.h; sourceTree = "<group>"; };
+		F8F3A6A9149D0CAD000CD0A4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Classes/Models/Photo.m; sourceTree = "<group>"; };
+		F8F3A6AC149D0E6F000CD0A4 /* placeholder-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-photo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F3A66E149CF5DA000CD0A4 /* Saxophoto */,
+				F8F3A6AC149D0E6F000CD0A4 /* placeholder-photo.png */,
 				F8F3A667149CF5DA000CD0A4 /* Frameworks */,
 				F8F3A665149CF5DA000CD0A4 /* Products */,
 				F8F3A683149D0317000CD0A4 /* Vendor */,
@@ -116,6 +122,7 @@
 				F8F3A6A5149D0374000CD0A4 /* SaxophotoAPIClient.h */,
 				F8F3A6A6149D0374000CD0A4 /* SaxophotoAPIClient.m */,
 				F8F3A682149CF68C000CD0A4 /* Controllers */,
+				F8F3A6AB149D0CB2000CD0A4 /* Models */,
 				F8F3A66F149CF5DA000CD0A4 /* Supporting Files */,
 			);
 			path = Saxophoto;
@@ -179,6 +186,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		F8F3A6AB149D0CB2000CD0A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A6A8149D0CAD000CD0A4 /* Photo.h */,
+				F8F3A6A9149D0CAD000CD0A4 /* Photo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F3A673149CF5DA000CD0A4 /* InfoPlist.strings in Resources */,
+				F8F3A6AD149D0E6F000CD0A4 /* placeholder-photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +271,7 @@
 				F8F3A6A3149D0317000CD0A4 /* AFXMLRequestOperation.m in Sources */,
 				F8F3A6A4149D0317000CD0A4 /* UIImageView+AFNetworking.m in Sources */,
 				F8F3A6A7149D0374000CD0A4 /* SaxophotoAPIClient.m in Sources */,
+				F8F3A6AA149D0CAD000CD0A4 /* Photo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

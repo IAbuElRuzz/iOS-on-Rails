@@ -10,4 +10,6 @@
 
 @interface PhotosViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (nonatomic, retain) NSArray *photos;
+
 @end

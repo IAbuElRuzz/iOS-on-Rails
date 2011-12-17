@@ -8,9 +8,14 @@
 
 #import "PhotosViewController.h"
 
+#import "Photo.h"
+
 #import "SaxophotoAPIClient.h"
 
+#import "UIImageView+AFNetworking.h"
+
 @implementation PhotosViewController
+@synthesize photos = _photos;
 
 - (id)init {
     self = [super initWithStyle:UITableViewStylePlain];
@@ -29,6 +34,18 @@
     self.title = NSLocalizedString(@"Saxophoto", nil);
     
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePhoto:)] autorelease];
+    
+    [[SaxophotoAPIClient sharedClient] getPath:@"/photos" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableArray *mutablePhotos = [NSMutableArray array];
+        for (NSDictionary *attributes in [responseObject valueForKey:@"photos"]) {
+            Photo *photo = [[[Photo alloc] initWithAttributes:attributes] autorelease];
+            [mutablePhotos addObject:photo];
+        }
+        self.photos = mutablePhotos;
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
 }
 
 #pragma mark - Actions
@@ -45,7 +62,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [self.photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,7 +72,12 @@
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
-        
+    
+    Photo *photo = [self.photos objectAtIndex:indexPath.row];
+    
+    [cell.imageView setImageWithURL:photo.imageURL placeholderImage:[UIImage imageNamed:@"placeholder-photo.png"]];
+    cell.textLabel.text = photo.timestamp;
+    
     return cell;
 }
 
@@ -67,7 +89,7 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     NSURLRequest *uploadRequest = [[SaxophotoAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/photos" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.8) name:@"photo[image]" fileName:[[NSDate date] description] mimeType:@"image/jpeg"];
+        [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.8) name:@"photo[image]" fileName:[[[NSDate date] description]  stringByAppendingPathExtension:@"jpg"] mimeType:@"image/jpeg"];
     }];
     AFHTTPRequestOperation *operation = [[SaxophotoAPIClient sharedClient] HTTPRequestOperationWithRequest:uploadRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success: %@", responseObject);
