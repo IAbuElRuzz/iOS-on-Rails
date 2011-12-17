@@ -1,0 +1,275 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8F3A669149CF5DA000CD0A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F3A668149CF5DA000CD0A4 /* UIKit.framework */; };
+		F8F3A66B149CF5DA000CD0A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F3A66A149CF5DA000CD0A4 /* Foundation.framework */; };
+		F8F3A66D149CF5DA000CD0A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F3A66C149CF5DA000CD0A4 /* CoreGraphics.framework */; };
+		F8F3A673149CF5DA000CD0A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8F3A671149CF5DA000CD0A4 /* InfoPlist.strings */; };
+		F8F3A675149CF5DA000CD0A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A674149CF5DA000CD0A4 /* main.m */; };
+		F8F3A679149CF5DA000CD0A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A678149CF5DA000CD0A4 /* AppDelegate.m */; };
+		F8F3A681149CF672000CD0A4 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F3A680149CF672000CD0A4 /* PhotosViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F8F3A664149CF5DA000CD0A4 /* Saxophoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saxophoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F3A668149CF5DA000CD0A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8F3A66A149CF5DA000CD0A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8F3A66C149CF5DA000CD0A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F8F3A670149CF5DA000CD0A4 /* Saxophoto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Saxophoto-Info.plist"; sourceTree = "<group>"; };
+		F8F3A672149CF5DA000CD0A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8F3A674149CF5DA000CD0A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8F3A676149CF5DA000CD0A4 /* Saxophoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saxophoto-Prefix.pch"; sourceTree = "<group>"; };
+		F8F3A677149CF5DA000CD0A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F8F3A678149CF5DA000CD0A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8F3A67F149CF672000CD0A4 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosViewController.h; path = Classes/Controllers/PhotosViewController.h; sourceTree = "<group>"; };
+		F8F3A680149CF672000CD0A4 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosViewController.m; path = Classes/Controllers/PhotosViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8F3A661149CF5DA000CD0A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F3A669149CF5DA000CD0A4 /* UIKit.framework in Frameworks */,
+				F8F3A66B149CF5DA000CD0A4 /* Foundation.framework in Frameworks */,
+				F8F3A66D149CF5DA000CD0A4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8F3A659149CF5DA000CD0A4 = {
+			isa = PBXGroup;
+			children = (
+				F8F3A66E149CF5DA000CD0A4 /* Saxophoto */,
+				F8F3A667149CF5DA000CD0A4 /* Frameworks */,
+				F8F3A665149CF5DA000CD0A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8F3A665149CF5DA000CD0A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A664149CF5DA000CD0A4 /* Saxophoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8F3A667149CF5DA000CD0A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A668149CF5DA000CD0A4 /* UIKit.framework */,
+				F8F3A66A149CF5DA000CD0A4 /* Foundation.framework */,
+				F8F3A66C149CF5DA000CD0A4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F3A66E149CF5DA000CD0A4 /* Saxophoto */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A677149CF5DA000CD0A4 /* AppDelegate.h */,
+				F8F3A678149CF5DA000CD0A4 /* AppDelegate.m */,
+				F8F3A66F149CF5DA000CD0A4 /* Supporting Files */,
+				F8F3A682149CF68C000CD0A4 /* Controllers */,
+			);
+			path = Saxophoto;
+			sourceTree = "<group>";
+		};
+		F8F3A66F149CF5DA000CD0A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A670149CF5DA000CD0A4 /* Saxophoto-Info.plist */,
+				F8F3A671149CF5DA000CD0A4 /* InfoPlist.strings */,
+				F8F3A674149CF5DA000CD0A4 /* main.m */,
+				F8F3A676149CF5DA000CD0A4 /* Saxophoto-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8F3A682149CF68C000CD0A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8F3A67F149CF672000CD0A4 /* PhotosViewController.h */,
+				F8F3A680149CF672000CD0A4 /* PhotosViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8F3A663149CF5DA000CD0A4 /* Saxophoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8F3A67C149CF5DA000CD0A4 /* Build configuration list for PBXNativeTarget "Saxophoto" */;
+			buildPhases = (
+				F8F3A660149CF5DA000CD0A4 /* Sources */,
+				F8F3A661149CF5DA000CD0A4 /* Frameworks */,
+				F8F3A662149CF5DA000CD0A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Saxophoto;
+			productName = Saxophoto;
+			productReference = F8F3A664149CF5DA000CD0A4 /* Saxophoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8F3A65B149CF5DA000CD0A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F8F3A65E149CF5DA000CD0A4 /* Build configuration list for PBXProject "Saxophoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8F3A659149CF5DA000CD0A4;
+			productRefGroup = F8F3A665149CF5DA000CD0A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8F3A663149CF5DA000CD0A4 /* Saxophoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8F3A662149CF5DA000CD0A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F3A673149CF5DA000CD0A4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8F3A660149CF5DA000CD0A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F3A675149CF5DA000CD0A4 /* main.m in Sources */,
+				F8F3A679149CF5DA000CD0A4 /* AppDelegate.m in Sources */,
+				F8F3A681149CF672000CD0A4 /* PhotosViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8F3A671149CF5DA000CD0A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8F3A672149CF5DA000CD0A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8F3A67A149CF5DA000CD0A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F8F3A67B149CF5DA000CD0A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8F3A67D149CF5DA000CD0A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saxophoto/Saxophoto-Prefix.pch";
+				INFOPLIST_FILE = "Saxophoto/Saxophoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8F3A67E149CF5DA000CD0A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saxophoto/Saxophoto-Prefix.pch";
+				INFOPLIST_FILE = "Saxophoto/Saxophoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8F3A65E149CF5DA000CD0A4 /* Build configuration list for PBXProject "Saxophoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F3A67A149CF5DA000CD0A4 /* Debug */,
+				F8F3A67B149CF5DA000CD0A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8F3A67C149CF5DA000CD0A4 /* Build configuration list for PBXNativeTarget "Saxophoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F3A67D149CF5DA000CD0A4 /* Debug */,
+				F8F3A67E149CF5DA000CD0A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8F3A65B149CF5DA000CD0A4 /* Project object */;
+}

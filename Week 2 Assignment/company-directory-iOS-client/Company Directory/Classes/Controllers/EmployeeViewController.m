@@ -6,9 +6,12 @@
 //  Copyright (c) 2011年 Gowalla. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "EmployeeViewController.h"
 
 #import "Employee.h"
+
+#import "UIImageView+AFNetworking.h"
 
 enum {
     NameRowIndex        = 0,
@@ -43,6 +46,27 @@ enum {
 }
 
 #pragma mark - UIViewController
+
+- (void)loadView {
+    [super loadView];
+    
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 80.0f)];
+    tableHeaderView.backgroundColor = [UIColor clearColor];
+    
+    UIImageView *avatarImageView = [[[UIImageView alloc] initWithFrame:CGRectMake(10.0f, 5.0f, 50.0f, 50.0f)] autorelease];
+    [avatarImageView setImageWithURL:[NSURL URLWithString:@"http://localhost:3000/placeholder.gif"]];
+    avatarImageView.layer.cornerRadius = 5.0f;
+    avatarImageView.layer.masksToBounds = YES;
+    [tableHeaderView addSubview:avatarImageView];
+    
+    UILabel *nameLabel = [[[UILabel alloc] initWithFrame:CGRectMake(70.0f, 5.0f, 240.0f, 20.0f)] autorelease];
+    nameLabel.backgroundColor = [UIColor clearColor];
+    nameLabel.font = [UIFont boldSystemFontOfSize:16];
+    nameLabel.text = self.employee.name;
+    [tableHeaderView addSubview:nameLabel];
+    
+    self.tableView.tableHeaderView = tableHeaderView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
