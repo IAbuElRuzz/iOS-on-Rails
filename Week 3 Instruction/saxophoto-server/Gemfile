@@ -6,6 +6,8 @@ gem 'sqlite3'
 
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 
+gem 'geokit-rails3', :git => 'https://github.com/jlecour/geokit-rails3.git'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

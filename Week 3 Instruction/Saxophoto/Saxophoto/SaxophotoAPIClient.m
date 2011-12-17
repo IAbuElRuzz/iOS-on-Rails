@@ -16,7 +16,7 @@
     static SaxophotoAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[[SaxophotoAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:3000"]] autorelease];
+        _sharedClient = [[SaxophotoAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:3000"]];
     });
     
     return _sharedClient;

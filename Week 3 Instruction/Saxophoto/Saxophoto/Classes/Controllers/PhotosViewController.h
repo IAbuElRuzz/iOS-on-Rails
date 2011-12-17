@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface PhotosViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface PhotosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
+
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) MKMapView *mapView;
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @property (nonatomic, retain) NSArray *photos;
 

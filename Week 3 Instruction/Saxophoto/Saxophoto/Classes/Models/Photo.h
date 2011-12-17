@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface Photo : NSObject
+@interface Photo : NSObject <MKAnnotation>
+
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
+@property (readonly) CLLocation *location;
 
 @property (nonatomic, copy) NSString *imageURLString;
 @property (readonly) NSURL *imageURL;
