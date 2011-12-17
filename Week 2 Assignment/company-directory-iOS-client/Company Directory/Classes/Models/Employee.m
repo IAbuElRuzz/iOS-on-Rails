@@ -27,6 +27,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 @synthesize jobTitle = _jobTitle;
 @synthesize birthday = _birthday;
 @synthesize salary = _salary;
+@synthesize department = _department;
 
 - (id)initWithAttributes:(NSDictionary *)attributes {
     self = [super init];
@@ -37,8 +38,10 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     self.name = [attributes valueForKey:@"name"];
     self.jobTitle = [attributes valueForKey:@"job_title"];
     
-    ISO8601DateFormatter *iso8601Formatter = [[[ISO8601DateFormatter alloc] init] autorelease];
-    self.birthday = [iso8601Formatter dateFromString:[attributes valueForKey:@"birthday"]];
+    if ([attributes valueForKey:@"birthday"]) {
+        ISO8601DateFormatter *iso8601Formatter = [[[ISO8601DateFormatter alloc] init] autorelease];
+        self.birthday = [iso8601Formatter dateFromString:[attributes valueForKey:@"birthday"]];
+    }
     
     self.salary = [NSNumber numberWithFloat:[[attributes valueForKey:@"salary"] floatValue]];
     

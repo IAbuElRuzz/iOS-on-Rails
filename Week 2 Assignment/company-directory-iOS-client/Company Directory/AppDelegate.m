@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "EmployeeListViewController.h"
+#import "DepartmentsListViewController.h"
 
 @implementation AppDelegate
 @synthesize window = _window;
@@ -21,7 +21,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    EmployeeListViewController *viewController = [[[EmployeeListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    DepartmentsListViewController *viewController = [[[DepartmentsListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];

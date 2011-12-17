@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EmployeeListViewController : UITableViewController
+@interface DepartmentsListViewController : UITableViewController
 
-@property (nonatomic, retain) NSArray *employees;
+@property (nonatomic, retain) NSArray *departments;
+@property (nonatomic, retain) NSDictionary *employeesKeyedByDepartment;
 
 @end

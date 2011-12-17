@@ -1,4 +1,6 @@
 CompanyDirectory::Application.routes.draw do
+  resources :departments
+
   resources :employees
 
   # The priority is based upon order of creation:

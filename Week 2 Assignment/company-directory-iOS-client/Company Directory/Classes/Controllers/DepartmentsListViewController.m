@@ -6,18 +6,34 @@
 //  Copyright (c) 2011年 CabForward. All rights reserved.
 //
 
-#import "EmployeeListViewController.h"
+#import "DepartmentsListViewController.h"
 #import "EmployeeViewController.h"
 #import "NewEmployeeViewController.h"
 
+#import "Department.h"
 #import "Employee.h"
 
-@implementation EmployeeListViewController
-@synthesize employees = _employees;
+@implementation DepartmentsListViewController
+@synthesize departments = _departments;
+@synthesize employeesKeyedByDepartment = _employeesKeyedByDepartment;
 
 - (void)dealloc {
-    [_employees release];
+    [_departments release];
+    [_employeesKeyedByDepartment release];
     [super dealloc];
+}
+
+- (void)setDepartments:(NSArray *)departments {
+    [self willChangeValueForKey:@"departments"];
+    [_departments autorelease];
+    _departments = [departments retain];
+    [self didChangeValueForKey:@"departments"];
+    
+    NSMutableDictionary *mutableKeyedEmployees = [NSMutableDictionary dictionary];
+    for (Department *department in self.departments) {
+        [mutableKeyedEmployees setObject:[department.employees allObjects] forKey:department.name];
+    }
+    self.employeesKeyedByDepartment = mutableKeyedEmployees;
 }
 
 #pragma mark - UIViewController
@@ -29,8 +45,8 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEmployee:)];
     
-    [Employee employeesWithBlock:^(NSArray *employees) {
-        self.employees = employees;
+    [Department departmentsWithBlock:^(NSArray *departments) {
+        self.departments = departments;
         [self.tableView reloadData];
     }];
 }
@@ -70,11 +86,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.departments count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.employees count];
+    Department *department = [self.departments objectAtIndex:section];
+    return [[self.employeesKeyedByDepartment objectForKey:department.name] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +102,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    Department *department = [self.departments objectAtIndex:indexPath.section];
+    Employee *employee = [[self.employeesKeyedByDepartment objectForKey:department.name] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = employee.name;
     cell.detailTextLabel.text = employee.jobTitle;
@@ -95,8 +113,14 @@
 
 #pragma mark - UITableViewDelegate
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Department *department = [self.departments objectAtIndex:section];
+    return department.name;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    Department *department = [self.departments objectAtIndex:indexPath.section];
+    Employee *employee = [[self.employeesKeyedByDepartment objectForKey:department.name] objectAtIndex:indexPath.row];
     EmployeeViewController *viewController = [[[EmployeeViewController alloc] initWithEmployee:employee] autorelease];
     [self.navigationController pushViewController:viewController animated:YES];
 }

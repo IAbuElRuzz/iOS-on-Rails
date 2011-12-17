@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Department;
+
 @interface Employee : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *jobTitle;
 @property (nonatomic, retain) NSDate *birthday;
 @property (nonatomic, retain) NSNumber *salary;
+
+@property (nonatomic, retain) Department *department;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
